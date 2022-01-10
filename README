@@ -34,3 +34,7 @@ Important folders:
         - client/src/App.js
 
 
+
+Docker nice commands: 
+    - remove all old files: docker system prune
+

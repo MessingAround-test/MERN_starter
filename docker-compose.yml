@@ -61,24 +61,39 @@ services:
       - MONGO_URL=mongodb://db:27017
       - CLIENT=http://localhost:3000
     
-
+# original DB which worked
+  # db:
+  #   container_name: mongo_db
+  #   image: mongo:3.6.19-xenial
+  #   ports:
+  #     - 27017:27017
+  #   networks:
+  #     - mern-network
+  #   volumes:
+  #     - mongo-data:/data/db
+  #   environment:
+  #     - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+  #     - ME_CONFIG_MONGODB_ADMINPASSWORD=pass12345
   db:
-    container_name: mongo_db
-    image: mongo:3.6.19-xenial
+    image: mongo
+    container_name: mongo
+    volumes:
+      - mongodata:/data/db
     ports:
-      - 27017:27017
+      - "27017:27017"
     networks:
       - mern-network
-    volumes:
-      - mongo-data:/data/db
-
-  
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      # MONGO_INITDB_DATABASE: golfStats
 
 networks:
   mern-network:
     driver: bridge
 
 volumes:
-  mongo-data:
+  mongodata:
     driver: local
+
 
