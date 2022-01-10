@@ -4,11 +4,12 @@ FROM node:14.16.0-alpine3.10
 WORKDIR /usr/app
 # Install app dependencies
 COPY package*.json ./
+# Copy app to container
+COPY . .
 # COPY package-lock.json ./
 RUN npm install express
 RUN npm install nodemon -g 
 RUN npm install -qy
-# Copy app to container
-COPY . .
+
 # Run the "dev" script in package.json
 CMD ["npm", "start"]
