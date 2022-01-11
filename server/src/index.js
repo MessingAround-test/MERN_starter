@@ -21,7 +21,7 @@ const testModel = mongoose.model('testCollection', new mongoose.Schema({ name: S
 
 async function connect() {
   await mongoose.connect('mongodb://admin:admin@db:27017/');
-  
+  console.log('asdasd')
 }
 
 // Search the schema we created above to see if any data is in there.

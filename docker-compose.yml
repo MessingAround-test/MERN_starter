@@ -1,47 +1,49 @@
 # version: "3"
 # services:
 
-#   client:
-#     build: 
-#       context: ./client
-#       dockerfile: Dockerfile
-#     ports:
-#       - 3000:3000
-#     networks:
-#       - mern-network
-#     volumes:
-#       - ./client/src:/usr/app/src
-#       - ./client/public:/usr/app/public
-#     # depends_on:
-#     #   - server
-#     environment:
-#       - REACT_APP_SERVER=http://localhost:3000
-#       - CHOKIDAR_USEPOLLING=true
-#     command: npm start
-#     stdin_open: true
-#     tty: true
+
 
 version: '3.7'
 
 services:
 
+  # sample:
+  #   container_name: client
+  #   build:
+  #     context: ./client
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - ./client/src:/usr/app/src
+  #     # - ./client/public:/usr/app/public
+  #   ports:
+  #     - 3001:3000
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+  #   networks:
+  #     - mern-network
+  #   depends_on:
+  #     - server
+  
   sample:
     container_name: client
-    build:
+    build: 
       context: ./client
       dockerfile: Dockerfile
-    volumes:
-      - ./client/src:/usr/app/src
-      - ./client/public:/usr/app/public
     ports:
-      - 3001:3000
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+      - 3000:3000
     networks:
       - mern-network
-    depends_on:
-      - server
-
+    volumes:
+      - ./client/src:/app/src
+      - ./client/public:/app/public
+    # depends_on:
+    #   - server
+    environment:
+      - REACT_APP_SERVER=http://localhost:3000
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+    stdin_open: true
+    tty: true
 
   
   server:
