@@ -1,62 +1,64 @@
 # Table of contents
-1. [Introduction](#introduction)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
+1. [INSTALLING THINGS](#a)
+2. [How to start up containers](#b)
+3. [How to shut down the containers](#c) 
+4. [How to connect to the important parts of the system](#d)
 
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
+	4.1 [Database Steps](#e)
 
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
+	4.2 [API](#f)
 
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+	4.3 [Front end](#g)
+5. [Important folders](#h)
 
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
+	5.1 [API for important folders](#i)
+
+	5.2 [Front end for important folders](#j)
+
+6. [Docker nice commands](#k)
 
 
-# INSTALLING THINGS 
+# INSTALLING THINGS <a name="a"></a>
 - install docker
 - install node
 
-# How to start up containers
+# How to start up containers <a name="b"></a>
 
 - cd into this folder
 - type the command on the line below
 
 		docker-compose up
 
-# How to shut down the containers
+# How to shut down the containers <a name="c"></a>
 - cd into this folder
 - type the command on the line below
 
     	docker-compose down
 
-# How to connect to the important parts of the system
-## Database Steps
+# How to connect to the important parts of the system <a name="d"></a>
+
+## Database Steps <a name="e"></a>
 - Connect to mongo_db docker container
 - type the command on the line below
 
         mongo
 
-## API: 
+## API  <a name="f"></a>
 - Open browser and navigate to http://localhost:5000
 
-## Front end: 
+## Front end  <a name="g"></a>
 - Open browser and navigate to http://localhost:3001
 
-# Important folders
-## API: 
+# Important folders <a name="h"></a>
+## API for important folders  <a name="i"></a>
 - server/src/index.js
 - This file can be changed if you want to return data from the database to the front end 
-## Front end: 
+## Front end for important folders <a name="j"></a>
 - Edit the HTML of the page
 - client/src/App.js
 
 
 
-# Docker nice commands
+# Docker nice commands <a name="k"></a>
 - remove all old files: docker system prune
 

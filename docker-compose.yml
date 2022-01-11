@@ -33,9 +33,10 @@ services:
       - 3000:3000
     networks:
       - mern-network
+    # instead of "/app/src" and "/app/public" you want to start from "/usr/app/src" and "/usr/app/public"
     volumes:
-      - ./client/src:/app/src
-      - ./client/public:/app/public
+      - ./client/src:/usr/app/src
+      - ./client/public:/usr/app/public
     # depends_on:
     #   - server
     environment:
